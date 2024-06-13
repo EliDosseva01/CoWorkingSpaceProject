@@ -20,7 +20,7 @@ public class BookingService : IBookingService
 
     public BookingService(IRepository repo, HttpClient httpClient)
     {
-        _repo = repo;
+        _repo = repo; 
         _httpClient = httpClient;
     }
 
