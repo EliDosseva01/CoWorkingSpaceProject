@@ -15,7 +15,7 @@ namespace CoWorkingSpace.Core.Services;
 
 public class BookingService : IBookingService
 {
-    private readonly IRepository _repo;
+    private readonly IRepository _repo; 
     private readonly HttpClient _httpClient;
 
     public BookingService(IRepository repo, HttpClient httpClient)
