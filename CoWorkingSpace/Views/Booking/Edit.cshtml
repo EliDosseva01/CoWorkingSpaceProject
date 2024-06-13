@@ -1,0 +1,47 @@
+﻿@model BookingViewModel
+
+@{
+    ViewBag.Title = "Edit Booking";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/EditStyle.css" asp-append-version="true">
+
+<div class="mybookingheader">
+
+    <img src="~/img/images.png" id="edit-img" alt="edit logo" />
+
+    <div class="edit-booking">
+
+        <form asp-action="Edit">
+
+            <div class="form-group">
+                <label for="Date">Date:</label>
+                <input class="input-edit" asp-for="Date" id="Date" />
+                <span asp-validation-for="Date" class="small text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="StartTime">Start Time:</label>
+                <input class="input-edit" asp-for="StartTime" id="StartTime" />
+                <span asp-validation-for="StartTime" class="small text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="EndTime">End Time:</label>
+                <input class="input-edit" asp-for="EndTime" id="EndTime" />
+                <span asp-validation-for="EndTime" class="small text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Update</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

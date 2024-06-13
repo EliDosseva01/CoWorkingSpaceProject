@@ -1,0 +1,68 @@
+﻿@model BookingViewModel
+
+@{
+    ViewBag.Title = "Booking Page";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/BookingIndex.css">
+
+<div class="my-booking-header">
+
+    <div class="edit-booking">
+
+        <form method="post">
+
+            <div class="form-group">
+                <label for="Date">Date:</label>
+                <input id="date" asp-for="Date" class="form-group">
+                <span asp-validation-for="Date" class="small text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label for="startTime">Start Time:</label>
+                <select id="startTime" asp-for="StartTime" class="form-control" required>
+                    @for (int hour = 8; hour < 20; hour++)
+                    {
+                        <option value="@hour.ToString("D2"):00">@hour.ToString("D2"):00</option>
+                    }
+                </select>
+                <div class="invalid-feedback">
+                    Please select a valid start time.
+                </div>
+                <span asp-validation-for="StartTime" class="small text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="endTime">End Time:</label>
+                <select id="endTime" asp-for="EndTime" class="form-control" required>
+                    @for (int hour = 9; hour < 21; hour++)
+                    {
+                        <option value="@hour.ToString("D2"):00">@hour.ToString("D2"):00</option>
+                    }
+                </select>
+                <div class="invalid-feedback">
+                    Please select a valid end time.
+                </div>
+                <span asp-validation-for="EndTime" class="small text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Price:</label>
+                <input class="form-group" id="price" type="text" placeholder="Price" readonly disabled>
+            </div>
+
+            <div class="book-btn-con">
+                <input type="submit" value="Book Now" class="book-button" asp-controller="Booking" asp-action="AddBooking" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/calculateBookingPrice.js"></script>
+
+<script src="~/js/main.js"></script>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

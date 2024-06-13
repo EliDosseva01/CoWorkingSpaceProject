@@ -1,0 +1,115 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #27f2c5;
+    box-shadow: 1px 2px rgba(0,0,0,0.2);
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    background: #27f2c5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    height: 110px;
+    padding: 0 0px;
+    width: 100%;
+}
+
+.text-container {
+    margin-right: 40px;
+}
+
+.box-nav-links-container {
+    background-color: #27f2c5;
+    height: 33.33%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.links-container {
+    align-items: flex-end;
+}
+
+.link-on-nav {
+    transition: 0.3s ease;
+    background: #27f2c5;
+    color: #333333;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Open Sans';
+    text-decoration: none;
+    border-top: 4px solid #27f2c5;
+    border-bottom: 4px solid #27f2c5;
+    padding: 20px 0;
+    margin: 0 20px;
+}
+
+    .link-on-nav:hover {
+        border-top: 4px solid #ffffff;
+        border-bottom: 4px solid #ffffff;
+        padding: 6px 0;
+        color: white;
+    }
+
+.auth-btn:hover {
+    color: #ffffff
+}
+
+.auth-btn {
+    all: unset;
+    transition: 0.5s ease;
+    color: #333333;
+    cursor: pointer;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 24px;
+    margin: 4px 20px 5px;
+}
+
+.auth {
+    display: flex;
+    justify-content: flex-end;
+}
+.logout-nav {
+    all: unset;
+    transition: 0.5s ease;
+    color: #333333;
+    cursor: pointer;
+    font-family: 'Open Sans';
+    position: absolute;
+    right: 10px;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0px 20px 35px;
+}
+
+    .logout-nav:hover {
+        color: #ffffff;
+    }
+
+.box img {
+    max-height: 125px;
+}
+
+.links-container-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resized-image {
+    height: 100px;
+    width: 100px;
+}

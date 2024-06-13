@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CoWorkingSpace.Core.Models.BookingViewModel>
+
+@{
+    ViewBag.Title = "Pending Bookings";
+    Layout = "_Layout";
+}
+
+<div class="container mt-5">
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>User</th>
+                <th>Date</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var booking in Model)
+            {
+                <tr>
+                    <td>@booking.UserEmail</td>
+                    <td>@booking.Date.ToString("MM/dd/yyyy")</td>
+                    <td>@booking.StartTime</td>
+                    <td>@booking.EndTime</td>
+                    <td>@booking.Price</td>
+                    <td>@booking.Status</td>
+                    <td>
+                        <form asp-action="ConfirmBooking" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@booking.Id" />
+                            <button type="submit" class="btn btn-success btn-sm">Confirm</button>
+                        </form>
+                        <form asp-action="RejectBooking" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@booking.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">Reject</button>
+                        </form>
+                        <form asp-action="Delete" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@booking.Id" />
+                            <button type="submit" class="btn btn-warning btn-sm">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+</div>
+

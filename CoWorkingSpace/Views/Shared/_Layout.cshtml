@@ -1,0 +1,68 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - The Working Spot</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/GlobalNavStyle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <partial name="_UserMessages" />
+
+    <header>
+
+        <nav id="nav-1">
+
+            <a href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/img/pngegg.png")" alt="app logo" class="resized-image" /></a>
+
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <div class="box-nav-links-container">
+
+                    <a class="link-on-nav" asp-area="Identity" asp-page="/Account/EditProfile">Hello, @User.Identity?.Name!</a>
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a class="link-on-nav" asp-controller="Manager" asp-action="ShowUsers">This Month Data</a>
+                        <a class="link-on-nav" asp-controller="Manager" asp-action="ShowPendingBookings">Pending Bookings</a>
+                    }
+                    else
+                    {
+                        <a class="link-on-nav" asp-controller="Booking" asp-action="MyBookings">My Bookings</a>
+                        <a class="link-on-nav" asp-controller="Booking" asp-action="MonthlyForm">Monthly form</a>
+                        <a class="link-on-nav" asp-controller="Booking" asp-action="Index">Book A Space</a>
+                    }
+                    <form class="logout-nav" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                        <button class="logout-nav" type="submit">Logout</button>
+                    </form>
+                </div>
+            }
+            else
+            {
+                <div class="auth">
+                    <a class="auth-btn" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                    <a class="auth-btn" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                </div>
+            }
+
+        </nav>
+    </header>
+    <div>
+        <main role="main">
+
+            @RenderBody()
+
+        </main>
+    </div>
+
+</body>
+
+<script src="~/lib/toastr/toastr.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)

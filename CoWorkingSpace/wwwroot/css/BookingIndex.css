@@ -1,0 +1,85 @@
+﻿@import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800);
+
+body {
+    overflow-x: auto;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.edit-booking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 10px solid #ccc;
+    border-radius: 16px;
+    position: absolute;
+    top: 18vh;
+    left: 5%;
+    right: 5%;
+    width: 30%;
+    height: 75vh;
+    border: 10px solid #ccc;
+    border-radius: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 60px 10px 00px;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+}
+
+    .edit-booking h2 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .edit-booking .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .edit-booking label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    .edit-booking .small.text-danger {
+        color: red;
+        font-size: 12px;
+    }
+
+.book-button {
+    background-color: rgb(39, 242, 197);
+    color: rgb(15, 14, 15);
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: medium none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.book-btn-con {
+    text-align: center;
+}
+
+.input-edit {
+    font-size: 15px;
+}
+
+.edit-footer {
+    height: 5%;
+}
+
+.price {
+    bottom: 20px;
+}
+

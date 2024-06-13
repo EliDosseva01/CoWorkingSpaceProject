@@ -1,0 +1,66 @@
+﻿@model BookingViewFormModel
+
+@{
+    ViewBag.Title = "Monthly form";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/css/MonthlyForm.css" asp-append-version="true" />
+<script src="~/js/calculateTotals.js"></script>
+
+<body onload="calculateTotals()">
+
+    <section class="monthly-form">
+        @if (Model != null)
+        {
+            <h1>Monthly Form</h1>
+
+            <div class="form-container">
+
+                <div class="totals">
+                    <div class="total-price"></div>
+                    <div class="total-hours"></div>
+                </div>
+
+                <div class="bookings">
+                    <table class="table">
+                        <thead>
+                            <tr class="tr-header">
+                                <th>Date</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var booking in Model.Bookings!)
+                            {
+                                <tr class="tr-header">
+                                    <td>@booking.Date.ToString("MM/dd/yyyy")</td>
+                                    <td class="startTime">@booking.StartTime</td>
+                                    <td class="endTime">@booking.EndTime</td>
+                                    <td class="price">@booking.Price BGN</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                @if (!Model.IsSubmitted)
+                {
+                    <form class="comment" asp-controller="Booking" asp-action="SubmitForm">
+
+                        <button type="submit" class="commentBtn" 
+                                onclick="return confirm('Submitted form will be send to the facility manager. Confirm submitting ?')">Submit</button>
+
+                    </form>
+                }
+            </div>
+        }
+        else
+        {
+            <p class="empty"> You don`t have any created form right now.</p>
+        }
+    </section>
+
+</body>

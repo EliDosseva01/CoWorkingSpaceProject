@@ -1,0 +1,107 @@
+﻿body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.monthly-form {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2rem;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.form-container {
+    background-color: #f7f7f7;
+    width: 70%;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.totals {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem 0;
+}
+
+.table {
+    margin-bottom: 2rem;
+    width: 70%;
+}
+
+table td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 10px 10px;
+}
+
+.bookings {
+    display: flex;
+    justify-content: center;
+}
+
+
+.table thead tr th {
+    justify-content: space-between;
+}
+
+.comment {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+textarea {
+    width: 69%;
+}
+
+.commentBtn {
+    display: inline-block;
+    text-align: center;
+    background-color: rgba(0, 123, 255, 0.59);
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    width: 10%;
+    border-width: 0px;
+    padding: 9px 10px;
+    text-align: center;
+}
+
+    .commentBtn:hover {
+        background-color: #27f2c5;
+    }
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.total-price,
+.total-hours {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.tr-header {
+    text-align: center;
+}
+
+.empty {
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 6rem;
+}

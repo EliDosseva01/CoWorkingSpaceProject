@@ -1,0 +1,25 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.calendar {
+    margin: auto;
+    width: 40%;
+    border: 2px solid black;
+    padding: 5px;
+}

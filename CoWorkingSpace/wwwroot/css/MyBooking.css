@@ -1,0 +1,148 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.bookings {
+    display: flex;
+    justify-content: center;
+}
+
+.my-booking-header {
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.div-table-my-bookings {
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    margin: 3rem;
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+}
+
+    .table th,
+    .table td {
+        text-align: center;
+        border: 1px solid #ccc
+    }
+
+    .table th {
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .table .tr-header:hover {
+        background-color: #7db1bc;
+    }
+
+.form-delete,
+.form-create {
+    margin: 0;
+}
+
+.form-delete {
+    width: 25%
+}
+
+.action-btns {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-edit {
+    margin: 0 1em;
+    margin-bottom: 16px;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: rgba(0, 123, 255, 0.59);
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    border-width: 0px;
+    width: 20%
+}
+
+.btn-delete {
+    margin: 0 1em;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: rgba(0, 123, 255, 0.59);
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    border-width: 0px;
+    width: 90%
+}
+
+.btn-create {
+    margin: 0 1em;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: rgba(0, 123, 255, 0.59);
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    border-width: 0px;
+}
+
+    .btn-edit:hover,
+    .btn-delete:hover,
+    .btn-create:hover {
+        background-color: #27f2c5;
+    }
+
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0;
+}
+
+    .pagination li {
+        margin-right: 10px;
+    }
+
+        .pagination li:last-child {
+            margin-right: 0;
+        }
+
+    .pagination a {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #f7f7f7;
+        color: #007bff;
+        text-decoration: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+.empty {
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 6rem;
+}
